@@ -90,7 +90,7 @@ public class ContactsStepDefs {
 
         //get information from database
         //create connection to db
-        DBUtils.createConnection();
+        //DBUtils.createConnection();
         //we are getting only one row of result
         //query for retrieving firstname,lastname,email,phone
         String query ="select concat(first_name,' ',last_name) as \"full_name\",e.email,phone\n" +
@@ -110,7 +110,7 @@ public class ContactsStepDefs {
         System.out.println("expectedEmail = " + expectedEmail);
 
         //close connection
-        DBUtils.destroy();
+     //   DBUtils.destroy();
 
         //assertion
         Assert.assertEquals(expectedFullName,actualFullName);
@@ -136,7 +136,7 @@ public class ContactsStepDefs {
 
         //get information from database
         //create connection to db
-        DBUtils.createConnection();
+      //  DBUtils.createConnection();
         //we are getting only one row of result
         //query for retrieving firstname,lastname,email,phone
         String query ="select concat(first_name,' ',last_name) as \"full_name\",e.email,phone\n" +
@@ -156,7 +156,7 @@ public class ContactsStepDefs {
         System.out.println("expectedEmail = " + expectedEmail);
 
         //close connection
-        DBUtils.destroy();
+      //  DBUtils.destroy();
 
         //assertion
         Assert.assertEquals(expectedFullName,actualFullName);
