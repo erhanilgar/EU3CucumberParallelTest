@@ -1,5 +1,5 @@
 Feature: Contacts page
-
+@abc
   Scenario:Default page number
     Given the user is on the login page
     And the user enters the driver information
@@ -59,3 +59,20 @@ Feature: Contacts page
       | user           | firstName | lastName  |
       | user10         | Brenden   | Schneider |
       | storemanager85 | Stephan   | Haley     |
+
+  Scenario: Contact test with email
+    Given the user logged in as "sales manager"
+    And the user navigates to "Customers" "Contacts"
+    When the user click the "mbrackstone9@example.com" from contacts
+    Then the information for "mbrackstone9@example.com" should be same with database
+  @abd @db
+  Scenario Outline: Contacts Test
+    Given the user logged in as "sales manager"
+    And the user navigates to "Customers" "Contacts"
+    When the user click the "<email>" from contacts
+    Then the information for "<email>" should be same with database
+    Examples:
+      |email|
+      |mbracksstone9@example.com|
+      |mike.jorden@hotmail.com|
+
